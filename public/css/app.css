@@ -500,3 +500,32 @@ p {
 .go-register{
     margin-top: 20px;
 }
+
+/*//profile//////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.block-profile{
+    width: 1440px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8f8f8;
+}
+.block-profile-osn{
+    background: #ffffff;
+    width: 500px;
+    height: 600px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block-profile-center{
+    width: 400px;
+    height: 550px;
+}
+.profile-login{
+    display: flex;
+    flex-direction: row;
+}

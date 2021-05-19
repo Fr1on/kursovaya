@@ -1,8 +1,20 @@
 @extends('layout')
 @section('main')
-    <h1>{{ $LoggedUserInfo->name }}</h1>
-    <h1>{{ $LoggedUserInfo->email }}</h1>
-    <a href={{route('logout.route')}}>Выйти</a>
+    <div class="block-profile">
+        <div class="block-profile-osn">
+            <div class="block-profile-center">
+                <div class="profile-login">
+                    <h4>Логин:</h4>
+                    <h4>{{ $LoggedUserInfo->name }}</h4>
+                </div>
+                <div class="profile-login">
+                    <h4>Email:</h4>
+                    <h4>{{ $LoggedUserInfo->email }}</h4>
+                </div>
+                <a href={{route('logout.route')}}>Выйти</a>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('down')
 

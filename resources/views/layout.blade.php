@@ -32,6 +32,7 @@
             <a class="gko" href="">О нас</a>
             <input class="search" type="text">
             <button class="search-butt"><i class="fas fa-search"></i></button>
+
             <a class="authnav" href="{{ route('login.route') }}">Войти</a>
 
         </nav>
