@@ -1,0 +1,502 @@
+/*Navbar/////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.container-one{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
+
+
+}
+
+.search {
+    width: 270px;
+    height: 30px;
+    background: #E5E5E5;
+    border-radius: 10px 0px 0px 10px;
+    border: 0px;
+    outline: none;
+    padding-left: 10px;
+    padding-right: 0px;
+    margin: 0px;
+
+}
+
+.search:focus {
+    border: 0px;
+}
+
+.search-butt {
+    background: #E5E5E5;
+    border-radius: 0px 10px 10px 0px;
+    border: 0px;
+    outline: none;
+    padding-left: 5px;
+    margin: 0px;
+    height: 30px;
+
+}
+
+.poisk {
+    margin: 0px;
+}
+
+.gko {
+    padding-right: 50px;
+    font-size: 20px ;
+}
+
+.header {
+
+    width: 1440px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+
+
+
+}
+
+.header-main {
+
+    width: 1298px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.logo-two {
+
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+.logo {
+
+    padding-right: 100px;
+    display: flex;
+
+}
+
+
+.authnav {
+    padding-left: 250px;
+}
+.keyboard-size {
+    font-size: 20px;
+}
+
+/*main//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+body {
+    background: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0px;
+    border: 0px;
+}
+
+
+
+
+
+p {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*фиолетовая хуита и комп/////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+.down-navbar{
+
+    height: 350px;
+    width: 1440px;
+
+    background: linear-gradient(90.28deg, #6700A9 0%, #2A95F7 100%);
+    border-radius: 0px 0px 25px 25px;
+    display: flex;
+    flex-direction: row;
+}
+.text-navbar{
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:800px;
+
+}
+.text-size-navbar{
+    width: 650px;
+    color: white;
+}
+.pc-navbar{
+    width: 640px;
+    margin-top: 50px;
+}
+
+.down-header{
+    height: 635px;
+    width: 1440px;
+
+
+    background: #f8f8f8;
+
+}
+.links{
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 100px;
+
+
+}
+.links-ikons{
+    display: flex;
+    flex-direction: row;
+}
+.ikons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 40px;
+    padding: 30px;
+}
+
+/*порулярные продукты /////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.popular-product{
+    width: 1440px;
+
+    background-color: #f8f8f8;
+
+}
+.palka{
+    display: flex;
+    justify-content: center;
+}
+.populyarniitovari{
+
+    display: flex;
+    justify-content: center;
+}
+
+.products{
+    margin-top: 75px;
+    margin-bottom: 75px;
+    display: flex;
+    justify-content: space-around;
+
+}
+.product{
+    width: 240px;
+    height: 360px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+}
+.site-main{
+    width: 1440px;
+    background: #f8f8f8;
+}
+
+/*НИЖНЯЯ ШТУКА /////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+.container-two{
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.downbar{
+    display: flex;
+    justify-content: space-around;
+}
+.downer{
+    width: 1440px;
+    height: 200px;
+    background: linear-gradient(90.28deg, #6700A9 0%, #2A95F7 100%);
+    display: flex;
+    flex-direction: row;
+
+}
+.header-down{
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+
+}
+.ssilki{
+    margin-left: 105px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.prava{
+    height: 170px;
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
+
+.links-ikonss{
+    display: flex;
+    flex-direction: row;
+    margin-left: 70px;
+
+}
+
+/*registration///////////////////////////////////////////////////////////////////////////
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+.reg{
+    width: 1150px;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    margin: 75px;
+
+
+}
+.back-reg{
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+
+}
+.image-reg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90.28deg, #6700A9 0%, #2A95F7 100%);
+    height: 650px;
+    width: 600px;
+    border-radius: 30px 0px 0px 30px ;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+}
+.reg-reg{
+    height: 650px;
+    width: 600px;
+    background: #ffffff;
+    border-radius: 0px 30px 30px 0px ;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+}
+.logo-two-auth {
+
+    font-size: 80px;
+    color: #ffffff;
+
+}
+
+.logo-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 100px;
+    display: flex;
+    margin-left: 70px;
+
+}
+.logo-threee{
+    color: #ffffff;
+    font-size: 50px;
+}
+
+.reg-auth{
+    width: 500px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.reg-reg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reg-input{
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+}
+.reg-input-two{
+    width: 380px;
+    height: 50px;
+    border-radius: 10px;
+    background: #E5E5E5;
+    border: 0px;
+    outline: none;
+    padding-left: 10px;
+}
+.pass-reg-input{
+    margin-top:20px;
+}
+.pass-reg-input-two{
+    width: 380px;
+    height: 50px;
+    border-radius: 10px;
+    background: #E5E5E5;
+    border: 0px;
+    outline: none;
+    padding-left: 10px;
+}
+.reg-button-two{
+    width: 200px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+    border: 0px;
+    outline: none;
+    background: #2A95F7;
+}
+.reg-button {
+    margin-top: 40px;
+}
+.go-login{
+    margin-top: 20px;
+}
+
+/*login///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////*/
+
+.login{
+    width: 1150px;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    margin: 75px;
+
+
+}
+.back-login{
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+
+}
+.image-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90.28deg, #6700A9 0%, #2A95F7 100%);
+    height: 650px;
+    width: 600px;
+    border-radius: 30px 0px 0px 30px ;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+}
+.login-login{
+    height: 650px;
+    width: 600px;
+    background: #ffffff;
+    border-radius: 0px 30px 30px 0px ;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.25);
+}
+.logo-two-auth {
+
+    font-size: 80px;
+    color: #ffffff;
+
+}
+
+.logo-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 100px;
+    display: flex;
+    margin-left: 70px;
+
+}
+.logo-threee{
+    color: #ffffff;
+    font-size: 50px;
+}
+.fas fa-mouse{
+    font-size: 40px;
+}
+.login-auth{
+    width: 500px;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-input{
+    margin-top:20px;
+}
+.login-input-two{
+    width: 380px;
+    height: 50px;
+    border-radius: 10px;
+    background: #E5E5E5;
+    border: 0px;
+    outline: none;
+    padding-left: 10px;
+}
+.pass-input{
+    margin-top:20px;
+}
+.pass-input-two{
+    width: 380px;
+    height: 50px;
+    border-radius: 10px;
+    background: #E5E5E5;
+    border: 0px;
+    outline: none;
+    padding-left: 10px;
+}
+.login-button-two{
+    width: 130px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+    border: 0px;
+    outline: none;
+    background: #2A95F7;
+}
+.login-button {
+    margin-top: 40px;
+}
+.go-register{
+    margin-top: 20px;
+}
