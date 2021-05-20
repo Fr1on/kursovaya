@@ -18,11 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', [MainController::class, 'home'])->name('main');
 Route::get('about', [MainController::class, 'about']);
-Route::get('login', [UserAuthController::class, 'login'])->name('login.route')->middleware('AlreadyLoggedIn');
-Route::get('registration', [\App\Http\Controllers\UserAuthController::class, 'registration'])->name('registration.route')->middleware('AlreadyLoggedIn');
-Route::post('create', [\App\Http\Controllers\UserAuthController::class, 'create'])->name('auth.create');
+Route::get('login', [UserAuthController::class, 'login'])->name('login.route')
+    ->middleware('AlreadyLoggedIn');
+Route::get('registration', [UserAuthController::class, 'registration'])->name('registration.route')
+    ->middleware('AlreadyLoggedIn');
+Route::post('create', [UserAuthController::class, 'create'])->name('auth.create');
 Route::post('check',[UserAuthController::class, 'check'])->name('auth.check');
-Route::get('profile',[UserAuthController::class, 'profile'])->middleware('isLogged');
+Route::get('profile',[UserAuthController::class, 'profile'])->middleware('auth')->name('profile.route');
 Route::get('logout',[UserAuthController::class, 'logout'])->name('logout.route');
 
 

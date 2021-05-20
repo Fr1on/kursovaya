@@ -27,13 +27,30 @@
                     </div>
                 </a>
             </div>
+            @csrf
             <a class="gko" href="{{ route('main') }}">Главная</a>
             <a class="gko" href="#">Категории</a>
             <a class="gko" href="">О нас</a>
             <input class="search" type="text">
             <button class="search-butt"><i class="fas fa-search"></i></button>
+            <div class="authnav-osn">
+                <div class="authnav">
+                    @auth
+                        <a class="authnav" href={{route('profile.route')}}>Профиль</a>
+                    @endauth
+                </div>
+                <div class="authnav">
+                    @auth
+                        <a href={{route('logout.route')}}>Выйти</a>
+                    @else
+                        <a  href={{route('login.route')}}>Войти</a>
+                    @endauth
+                </div>
 
-            <a class="authnav" href="{{ route('login.route') }}">Войти</a>
+            </div>
+
+
+
 
         </nav>
     </header>

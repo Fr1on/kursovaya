@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -53,38 +54,17 @@ class UserAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:5|max:12'
         ]);
-//        $user = User::where('email', '=', $request->email)->first();
-        $user = DB::table('users')
-                ->where('email',$request->email)
-                ->first();
-        if ($user){
-            if (Hash::check($request->password, $user->password)) {
-                $request->session()->put('LoggedUser', $user->id);
-                return redirect('profile');
-            } else {
-                return back()->with('fail', 'Invalid password');
-            }
-
-        }else{
-            return back()->with('fail','No account found for this email');
+        if(Auth::attempt($request->only('email', 'password'))){
+            return redirect('profile');
         }
+        return back()->with('fail','No account found for this email');
     }
     function profile(){
-        if(session()->has('LoggedUser')){
-//            $user = User::where('id', '=', session('LoggedUser'))->first();
-            $user = DB::table('users')
-                ->where('id', session('LoggedUser'))
-                ->first();
-            $data =[
-                'LoggedUserInfo'=>$user
-            ];
-        }
-        return view('admin.profile', $data);
+        return view('admin.profile');
     }
     function logout(){
-        if (session()->has('LoggedUser')){
-            session()->pull('LoggedUser');
-
+        if(Auth::check()){
+            Auth::logout();
             return redirect('login');
         }
     }
