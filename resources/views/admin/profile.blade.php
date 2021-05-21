@@ -12,6 +12,7 @@
                     <h4>{{ auth()->user()->email }}</h4>
                 </div>
                 <a href={{route('logout.route')}}>Выйти</a>
+                <a href={{ "edit/".auth()->user()->id}}>edit</a>
             </div>
         </div>
     </div>

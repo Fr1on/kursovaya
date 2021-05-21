@@ -68,4 +68,7 @@ class UserAuthController extends Controller
             return redirect('login');
         }
     }
+    function showData($id){
+        return user::find($id);
+    }
 }

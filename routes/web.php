@@ -26,5 +26,6 @@ Route::post('create', [UserAuthController::class, 'create'])->name('auth.create'
 Route::post('check',[UserAuthController::class, 'check'])->name('auth.check');
 Route::get('profile',[UserAuthController::class, 'profile'])->middleware('auth')->name('profile.route');
 Route::get('logout',[UserAuthController::class, 'logout'])->name('logout.route');
+Route::get('edit/{id}', [UserAuthController::class, 'showData']);
 
 
