@@ -31,7 +31,7 @@
             <img src="{{ asset('/img/palca.png')}}">
         </div>
         <div class="populyarniitovari">
-            <h2>Популярные товары</h2>
+            <h2>Категории</h2>
         </div>
         <div class="products">
             <div class="product">

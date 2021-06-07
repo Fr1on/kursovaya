@@ -13,6 +13,7 @@
                 </div>
                 <a href={{route('logout.route')}}>Выйти</a>
                 <a href={{ "edit/".auth()->user()->id}}>edit</a>
+                <a href={{ "delete/".auth()->user()->id}}>delete</a>
             </div>
         </div>
     </div>

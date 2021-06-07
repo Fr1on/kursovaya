@@ -32,13 +32,13 @@ class UserAuthController extends Controller
 //        $user->
 //        $user->password = Hash::make($request->password);
 //        $query = $user->save();
-            $query = DB::table('users')
-                ->insert([
-                   'name'=>$request->name,
-                    'email'=>$request->email,
-                    'password'=>Hash::make($request->password)
+        $query = DB::table('users')
+            ->insert([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
 
-                ]);
+            ]);
 
         if ($query) {
             return back()->with('success', 'You have been successfuly registered');
@@ -54,21 +54,46 @@ class UserAuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:5|max:12'
         ]);
-        if(Auth::attempt($request->only('email', 'password'))){
+        if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('profile');
         }
-        return back()->with('fail','No account found for this email');
+        return back()->with('fail', 'No account found for this email');
     }
-    function profile(){
+
+    function profile()
+    {
         return view('admin.profile');
     }
-    function logout(){
-        if(Auth::check()){
+
+    function logout()
+    {
+        if (Auth::check()) {
             Auth::logout();
             return redirect('login');
         }
     }
-    function showData($id){
-        return user::find($id);
+
+    function showData($id)
+    {
+        $data = user::find($id);
+        return view('edit', ['data' => $data]);
+
+    }
+
+    function update(Request $request)
+    {
+        $data=User::find($request->id);
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password= Hash::make($request->password);
+
+        $data->save();
+        return redirect('profile');
+    }
+    function delete($id){
+        $data=User::find($id);
+        $data->delete();
+        return redirect('login');
     }
 }
+

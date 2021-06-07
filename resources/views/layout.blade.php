@@ -1,3 +1,13 @@
+<?php
+
+use App\Http\Controllers\ProductController;
+$total = 0;
+if(\Illuminate\Support\Facades\Auth::user())
+{
+    $total = ProductController::cartItem();
+}
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,25 +41,32 @@
             <a class="gko" href="{{ route('main') }}">Главная</a>
             <a class="gko" href="#">Категории</a>
             <a class="gko" href="">О нас</a>
-            <input class="search" type="text">
-            <button class="search-butt"><i class="fas fa-search"></i></button>
+            <form action="/search">
+                <input class="search" type="text" name="query">
+                <button class="search-butt"><i class="fas fa-search"></i></button>
+            </form>
             <div class="authnav-osn">
                 <div class="authnav">
-                    @auth
+                    @if(Auth::check())
                         <a class="authnav" href={{route('profile.route')}}>Профиль</a>
-                    @endauth
+                    @endif
+
+                </div>
+                <div class="authnav">
+                    @if(Auth::check())
+                        <a class="authnav" href="/cartlist">Корзина({{$total}})</a>
+                    @endif
+
                 </div>
                 <div class="authnav">
                     @auth
                         <a href={{route('logout.route')}}>Выйти</a>
                     @else
-                        <a  href={{route('login.route')}}>Войти</a>
+                        <a href={{route('login.route')}}>Войти</a>
                     @endauth
                 </div>
 
             </div>
-
-
 
 
         </nav>
