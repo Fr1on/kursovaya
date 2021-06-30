@@ -11,9 +11,16 @@
                     <h4>Email:</h4>
                     <h4>{{ auth()->user()->email }}</h4>
                 </div>
-                <a href={{route('logout.route')}}>Выйти</a>
-                <a href={{ "edit/".auth()->user()->id}}>edit</a>
-                <a href={{ "delete/".auth()->user()->id}}>delete</a>
+                <div>
+
+                    <a href={{ "edit/".auth()->user()->id}}>редактировать профиль</a>
+                    <a href={{ "delete/".auth()->user()->id}}>удалить аккаунт</a>
+                </div>
+                <div>
+                    <a href={{route('logout.route')}}>Выйти</a>
+                    <a href={{route('admin')}}>admin</a>
+                    <a class="authnav" href={{route('productlist')}}>Продукты</a>
+                </div>
             </div>
         </div>
     </div>

@@ -1,14 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+
 $total = 0;
-if(\Illuminate\Support\Facades\Auth::user())
-{
+if (\Illuminate\Support\Facades\Auth::user()) {
     $total = ProductController::cartItem();
 }
 
 ?>
-<!doctype html>
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@ if(\Illuminate\Support\Facades\Auth::user())
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>@yield('title')</title>
+    <title>PFStore магазин компьтерной переферии</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/all.min.css') }}">
@@ -39,8 +39,10 @@ if(\Illuminate\Support\Facades\Auth::user())
             </div>
             @csrf
             <a class="gko" href="{{ route('main') }}">Главная</a>
-            <a class="gko" href="#">Категории</a>
+            <a class="gko" href="{{ route('product')}}">Товары</a>
+
             <a class="gko" href="">О нас</a>
+
             <form action="/search">
                 <input class="search" type="text" name="query">
                 <button class="search-butt"><i class="fas fa-search"></i></button>
@@ -49,8 +51,8 @@ if(\Illuminate\Support\Facades\Auth::user())
                 <div class="authnav">
                     @if(Auth::check())
                         <a class="authnav" href={{route('profile.route')}}>Профиль</a>
+                        <a class="authnav" href={{route('myorders')}}>Заказы</a>
                     @endif
-
                 </div>
                 <div class="authnav">
                     @if(Auth::check())

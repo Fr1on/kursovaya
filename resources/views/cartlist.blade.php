@@ -3,7 +3,7 @@
 
     <div class="cartt">
         <div>
-            <a class="btn btn-success" href="ordernow">Order Now</a>
+
             @foreach($products as $item)
                 <div class="otcart">
                     <div class="cart-products">
@@ -25,8 +25,8 @@
             @endforeach
         </div>
         <div class="qwe">
-
-        </div>
+            <a class="btn btn-success" href="ordernow">Оформить заказ</a>
+        </div class="qwe">
     </div>
 @endsection
 @section('down')

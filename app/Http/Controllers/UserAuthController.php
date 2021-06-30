@@ -17,6 +17,7 @@ class UserAuthController extends Controller
 
     public function registration()
     {
+
         return view('registration');
     }
 
@@ -27,11 +28,7 @@ class UserAuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:5|max:12'
         ]);
-//        $user = new User;
-//        $user->name = $request->name;
-//        $user->
-//        $user->password = Hash::make($request->password);
-//        $query = $user->save();
+
         $query = DB::table('users')
             ->insert([
                 'name' => $request->name,
@@ -41,7 +38,7 @@ class UserAuthController extends Controller
             ]);
 
         if ($query) {
-            return back()->with('success', 'You have been successfuly registered');
+            return back()->with('success', 'Регистрация прошла успешно');
         } else {
             return back()->with('fail', 'Something went wrong');
         }
@@ -50,6 +47,7 @@ class UserAuthController extends Controller
 
     function check(Request $request)
     {
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:5|max:12'
@@ -57,7 +55,7 @@ class UserAuthController extends Controller
         if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('profile');
         }
-        return back()->with('fail', 'No account found for this email');
+        return back()->with('fail', 'Не найден аккаунт с такой почтой или паролем');
     }
 
     function profile()
@@ -75,13 +73,27 @@ class UserAuthController extends Controller
 
     function showData($id)
     {
-        $data = user::find($id);
-        return view('edit', ['data' => $data]);
+        $myid = Auth::user()->id;
+        if($myid == $id || $myid == 1){
+            $data = user::find($id);
+            return view('edit', ['data' => $data]);
+        }
+        else{
+            return redirect('profile');
+
+        }
+
 
     }
 
     function update(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|',
+            'password' => 'required|min:5|max:12'
+        ]);
+
         $data=User::find($request->id);
         $data->name = $request->name;
         $data->email = $request->email;
@@ -94,6 +106,17 @@ class UserAuthController extends Controller
         $data=User::find($id);
         $data->delete();
         return redirect('login');
+    }
+    function userslist(){
+        $data=User::all();
+        return view('userslist',['users'=>$data]);
+    }
+    function admin(){
+
+                return view('admin');
+
+
+
     }
 }
 

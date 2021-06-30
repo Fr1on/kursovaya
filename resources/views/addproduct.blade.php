@@ -1,18 +1,27 @@
+
 @extends('layout')
 @section('main')
 
-    <form action="addProductData" method="POST" enctype="multipart/form-data">
-        @csrf
-
-            <input type="text" name="name" placeholder="name">
-            <input type="number" name="price" placeholder="price">
-            <input type="text" name="category" placeholder="category">
-            <textarea name="description" placeholder="description"></textarea>
-            <input type="file" name="photo" placeholder="photo">
-            <button type="submit">Add Product</button>
-            <h3> съеби</h3>
-
-    </form>
+    <div class="backaddprod">
+        <div class="addproducts">
+            <form action="addProductData" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="addproduct">
+                    <h2>Создание товара</h2>
+                    <h5>Название товара</h5>
+                    <input type="text" name="name"  class="addprod">
+                    <h5>Цена товара</h5>
+                    <input type="number" name="price"  class="addprod">
+                    <h5>Категория товара</h5>
+                    <input type="text" name="category"  class="addprod">
+                    <h5>Описание товара</h5>
+                    <textarea name="description"  class="addprod"></textarea>
+                    <input type="file" name="photo" placeholder="photo" class="addprodimg">
+                    <button type="submit" class="btn btn-primary btn-lg">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 @endsection
 @section('down')

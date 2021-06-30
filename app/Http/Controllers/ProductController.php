@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\product;
 use App\Models\Cart;
+use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -115,5 +116,65 @@ class ProductController extends Controller
             ->sum('products.price');
 
         return view('ordernow',['total'=>$total]);
+    }
+    function orderplace(Request $request)
+    {
+        $userId = Auth::user()->id;
+        $allCart =Cart::where('user_id', $userId)->get();
+        foreach ($allCart as $cart)
+        {
+            $order = new Order;
+            $order->product_id=$cart['product_id'];
+            $order->user_id=$cart['user_id'];
+            $order->status="в ожидании";
+            $order->payment_method=$request->payment;
+            $order->payment_status="в ожидании";
+            $order->address=$request->address;
+            $order->save();
+            Cart::where('user_id', $userId)->delete();
+        }
+        return redirect('/');
+    }
+    function myorders()
+    {
+      $userId = Auth::user()->id;
+      $myorders = DB::table('orders')
+          ->join('products','orders.product_id','=','products.id')
+          ->where('orders.user_id',$userId)
+          ->get();
+      return view('myorders',['myorders'=>$myorders]);
+
+    }
+
+    function updateproduct(Request $request)
+    {
+
+
+        $data=product::find($request->id);
+        $data->price = $request->price;
+        $data->description= $request->description;
+        $data->save();
+        return redirect('productlist');
+    }
+    function showproduct($id)
+    {
+
+
+            $data = product::find($id);
+            return view('editproduct', ['data' => $data]);
+
+    }
+    function productlist(){
+
+                $data=product::all();
+                return view('productlist',['products'=>$data]);
+
+
+
+    }
+    function deleteproduct($id){
+        $data=product::find($id);
+        $data->delete();
+        return redirect('productlist');
     }
 }

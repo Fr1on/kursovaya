@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get("userslist",[UserAuthController::class,'userslist'])->name('userslist');
+Route::get("productlist",[ProductController::class,'productlist'])->name('productlist');
 Route::get('', [MainController::class, 'home'])->name('main');
 Route::get('about', [MainController::class, 'about']);
 //PRODUCT//////
-Route::get('product', [ProductController::class, 'Product']);
-Route::get('addproduct', [ProductController::class, 'addProduct']);
+Route::get('product', [ProductController::class, 'Product'])->name('product');
+Route::get('addproduct', [ProductController::class, 'addProduct'])->name('addproduct');
 Route::post('addProductData', [ProductController::class, 'addProductData']);
 Route::get('detail/{id}', [ProductController::class, 'detail']);
 Route::get('search', [ProductController::class, 'search']);
@@ -44,4 +45,10 @@ Route::get('delete/{id}', [UserAuthController::class,'delete']);
 
 /*/ORDER/////////////////////////////////////////////////////////////////////*/
 Route::get("ordernow",[ProductController::class,'orderNow']);
+Route::post("orderplace",[ProductController::class,'orderplace']);
+Route::get("myorders",[ProductController::class,'myorders'])->name('myorders');
+Route::get("admin",[UserAuthController::class,'admin'])->name('admin');
 
+Route::get('editproduct/{id}', [ProductController::class, 'showproduct']);
+Route::post('editproduct', [ProductController::class,'updateproduct'])->name('editproduct.route');
+Route::get('deleteproduct/{id}', [ProductController::class,'deleteproduct']);

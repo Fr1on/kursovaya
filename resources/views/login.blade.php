@@ -28,18 +28,18 @@
                         <h1>Авторизация</h1>
                         <div class="reg-input">
                             <label>Email</label>
-                            <input class="reg-input-two" type="text" name="email" {{ old('email') }}>
+                            <input class="reg-input-two" type="text" name="email" value="email" {{ old('email') }}>
                             <span class="text-danger">@error('email'){{$message}} @enderror</span>
                         </div>
                         <div class="reg-input">
                             <label>Пароль</label>
-                            <input class="reg-input-two" type="password" name="password">
+                            <input class="reg-input-two" type="password" name="password" value="password">
                             <span class="text-danger">@error('password'){{$message}} @enderror</span>
 
                         </div>
 
                         <div class="login-button">
-                            <button type="submit" class="login-button-two">Войти</button>
+                            <button type="submit" class="login-button-two" value="login">Войти</button>
                         </div>
                         <div class="go-register">
                             <a href={{route('registration.route')}}>
